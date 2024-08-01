@@ -4,7 +4,7 @@ Dipole RF Calculator
 ### Description<br/>
 Calculates Ez field from a half-wave dipole at distance r<br/>
 Calculates VOC (V open circuit) from the incident field Ez on an identical receiving dipole and polarization at distance r<br/>
-Calculates Pload (power delivered to a perfectly matched load) by the incident field Ez on an identical dipole and polarization at distance r<br/>
+Calculates Pload (power delivered to a perfectly matched load) by the incident field Ez on an identical dipole at distance r<br/>
 Calculates Prx (power received to a perfectly matched load) via Friis formula. This is used as a verification and it should be equal with Pload
 
 ### Other features
@@ -28,17 +28,17 @@ The trigonometric terms are caused by the sinusoidal Ia current distribution on 
 
 VOC formula below is the Ez*l but because the receiving antenna also has a sinusoidal current distribution it gets multiplied again by the trigonometric terms above<br/>
 This leads to the tan function squared because of the 2 identical dipoles<br/>
-<img src="/src/main/resources/dipole/rf/calculator/images/half-dipole3.png" width="350px">
+<img src="/src/main/resources/dipole/rf/calculator/images/half-dipole3.png" width="320px">
 <br/>
 
 Pload formula below is constructed from converting to rms and perfectly matching the load to the antenna<br/>
-<img src="/src/main/resources/dipole/rf/calculator/images/half-dipole4.png" width="170px">
+<img src="/src/main/resources/dipole/rf/calculator/images/half-dipole4.png" width="150px">
 <br/>
 
 **Verification 1**<br/>
 Friis formula below is use to verify all calculations above<br/>
 It takes into consideration both dipole's effective aperture area<br/>
-<img src="/src/main/resources/dipole/rf/calculator/images/half-dipole5.png" width="250px">
+<img src="/src/main/resources/dipole/rf/calculator/images/half-dipole5.png" width="230px">
 <br/>
 
 **Verification 2**<br/>
