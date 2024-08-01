@@ -3,15 +3,15 @@ Dipole RF Calculator
 ![](assets/images/logo2.png)
 ### Description<br/>
 Calculates Ez field from a half-wave dipole at distance r<br/>
-Calculates VOC (V open circuit) from the incident field Ez on an identical receiving dipole and polarization at distance r<br/>
-Calculates Pload (power delivered to a perfectly matched load) by the incident field Ez on an identical dipole at distance r<br/>
+Calculates VOC (V open circuit) from the incident field Ez on an identical receiving dipole at distance r <br/>
+Calculates Pload (power delivered to a perfectly matched load) by the incident field Ez on an identical receiving dipole at distance r <br/>
 Calculates Prx (power received to a perfectly matched load) via Friis formula. This is used as a verification and it should be equal with Pload
 
 ### Other features
 Calculates dipole length from input frequency for a quick antenna design<br/>
 Calculates dipole feed current Ia from input power<br/>
 Converts both Tx and Rx power to dbm for a quick link budget design<br/>
-Calculates the free space path loss for a quick link budget design. (this includes both Tx and Rx - 2.15db gain)<br/>
+Calculates the free space path loss for a quick link budget design. (this includes both Tx and Rx 2.15db gain)<br/>
 Computed results are displayed in engineering format<br/>
 
 ### Quick math
@@ -23,26 +23,26 @@ First the following assumptions are made:
 
 Ez formula below contain the classic Ia current, space impedance and decreasing with distance r<br>
 The trigonometric terms are caused by the sinusoidal Ia current distribution on the antenna (doughnut shape)<br>
-<img src="/src/main/resources/dipole/rf/calculator/images/half-dipole2.png" width="350px">
+<img src="assets/images/half-dipole2.png" width="350px">
 <br/>
 
 VOC formula below is the Ez*l but because the receiving antenna also has a sinusoidal current distribution it gets multiplied again by the trigonometric terms above<br/>
 This leads to the tan function squared because of the 2 identical dipoles<br/>
-<img src="/src/main/resources/dipole/rf/calculator/images/half-dipole3.png" width="320px">
+<img src="assets/images/half-dipole3.png" width="320px">
 <br/>
 
 Pload formula below is constructed from converting to rms and perfectly matching the load to the antenna<br/>
-<img src="/src/main/resources/dipole/rf/calculator/images/half-dipole4.png" width="150px">
+<img src="assets/images/half-dipole4.png" width="150px">
 <br/>
 
 **Verification 1**<br/>
 Friis formula below is use to verify all calculations above<br/>
 It takes into consideration both dipole's effective aperture area<br/>
-<img src="/src/main/resources/dipole/rf/calculator/images/half-dipole5.png" width="230px">
+<img src="assets/images/half-dipole5.png" width="210px">
 <br/>
 
 **Verification 2**<br/>
-We used CST studio to calculate the electric field for freq=2.4GHz, Ptx=36.54W, r=200m<br/>
+CST studio was used to calculate the electric field for freq=2.4GHz, Ptx=36.54W, r=200m<br/>
 This resulted in 0.2989V/m (screenshot below) while our application returned 0.3V/m (see screenshot at the end of this file) which is pretty good for our sinusoidal current distribution approximation<br/>
 ![](assets/images/cst.png)
 <br/>
