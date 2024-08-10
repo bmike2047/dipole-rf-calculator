@@ -13,7 +13,9 @@ public class CalculatorApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(CalculatorApplication.class.getResource("dipole-view.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 900, 750);
+        final String dipoleCss = getClass().getResource("css/dipole.css").toExternalForm();
+        Scene scene = new Scene(fxmlLoader.load(), 900, 725);
+        scene.getStylesheets().add(dipoleCss);
         stage.setTitle("Dipole RF Calculator");
         stage.setScene(scene);
         stage.show();

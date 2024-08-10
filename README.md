@@ -23,22 +23,22 @@ First the following assumptions are made:
 
 Ez formula below contain the classic Ia current, space impedance and decreasing with distance r<br>
 The trigonometric terms are caused by the sinusoidal Ia current distribution on the antenna (doughnut shape)<br>
-<img src="assets/images/half-dipole2.png" width="350px">
+<img src="assets/images/half-dipole2.gif" width="370px">
 <br/>
 
 VOC formula below is the Ez*l but because the receiving antenna also has a sinusoidal current distribution it gets multiplied again by the trigonometric terms above<br/>
 This leads to the tan function squared because of the 2 identical dipoles<br/>
-<img src="assets/images/half-dipole3.png" width="320px">
+<img src="assets/images/half-dipole3.gif" width="320px">
 <br/>
 
 Pload formula below is constructed from converting to rms and perfectly matching the load to the antenna<br/>
-<img src="assets/images/half-dipole4.png" width="150px">
+<img src="assets/images/half-dipole4.gif" width="150px">
 <br/>
 
 **Verification 1**<br/>
 Friis formula below is use to verify all calculations above<br/>
 It takes into consideration both dipole's effective aperture area<br/>
-<img src="assets/images/half-dipole5.png" width="210px">
+<img src="assets/images/half-dipole5.gif" width="210px">
 <br/>
 
 **Verification 2**<br/>
@@ -49,7 +49,10 @@ This resulted in 0.2989V/m (screenshot below) while our application returned 0.3
 
 ### Usage
 Requires JDK 17<br/>
-To generate the bin files use the following gradle tasks<br/>
+To run the project use the following command:<br/>
+```
+./gradlew clean run
+```
 For a java distribution run the command below and check folder: ./build/install/dipole-rf-calculator/bin<br/>
 ```
 ./gradlew clean installDist

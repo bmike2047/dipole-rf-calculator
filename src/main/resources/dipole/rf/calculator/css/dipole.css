@@ -1,0 +1,15 @@
+@font-face {
+  src: url("../fonts/DejaVuSansMono.ttf");
+}
+
+.label {
+    -fx-font-family: "DejaVu Sans Mono";
+ }
+
+.text-field {
+    -fx-font-family: "DejaVu Sans Mono";
+ }
+
+.button {
+    -fx-font-family: "DejaVu Sans Mono";
+}
