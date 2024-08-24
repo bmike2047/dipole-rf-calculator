@@ -1,7 +1,11 @@
 Dipole RF Calculator
 --
 ![](assets/images/logo2.png)
-### Description<br/>
+
+### Code repository
+<a href="https://github.com/bmike2047/dipole-rf-calculator">https://github.com/bmike2047/dipole-rf-calculator</a>
+
+### Description
 Calculates Ez field from a half-wave dipole at distance r<br/>
 Calculates VOC (V open circuit) from the incident field Ez on an identical receiving dipole at distance r <br/>
 Calculates Pload (power delivered to a perfectly matched load) by the incident field Ez on an identical receiving dipole at distance r <br/>
