@@ -68,10 +68,6 @@ sudo apt-get install binutils //only for linux
 ```
 
 > [!TIP]
-> To skip building and run directly on your computer install JDK17+ and run the script file inside folder:<br/>
-> ***./dist/your-OS/dipole-rf-calculator/bin/***
-
-> [!TIP]
 > I case you have older JDK version than JDK 17 and you are using IntelliJIDEA as IDE make sure Gradle JVM is set to JDK 17 in:<br/>
 > File | Settings | Build, Execution, Deployment | Build Tools | Gradle  -> Gradle JVM
 
