@@ -6,10 +6,10 @@ Dipole RF Calculator
 <a href="https://github.com/bmike2047/dipole-rf-calculator">https://github.com/bmike2047/dipole-rf-calculator</a>
 
 ### Description
-Calculates Ez field from a half-wave dipole at distance r<br/>
-Calculates VOC (V open circuit) from the incident field Ez on an identical receiving dipole at distance r <br/>
-Calculates Pload (power delivered to a perfectly matched load) by the incident field Ez on an identical receiving dipole at distance r <br/>
-Calculates Prx (power received to a perfectly matched load) via Friis formula. This is used as a verification and it should be equal with Pload
+Calculates Ez field from a half-wave dipole antenna at distance r<br/>
+Calculates VOC (V open circuit) from the incident field Ez on an identical receiving dipole antenna at distance r <br/>
+Calculates Pload (power delivered to a perfectly matched load) by the incident field Ez on an identical receiving dipole antenna at distance r <br/>
+Calculates Prx (power received to a perfectly matched load) via Friis formula.
 
 ### Other features
 Calculates dipole length from input frequency for a quick antenna design<br/>
@@ -20,9 +20,9 @@ Computed results are displayed in engineering format<br/>
 
 ### Quick math
 First the following assumptions are made:
-* dipole has a half-wave length meaning radiation resistance Rrad = 73.08 &#937;
+* dipole antenna has a half-wave length meaning radiation resistance Rrad = 73.08 &#937;
 * Ez represents the electric field in Cartesian coordinates  and is identical with E&#952; with &#952;=90&#176; in spherical coordinates
-* VOC, Pload and Prx are calculated on an identical receiving dipole and polarization at distance r
+* VOC, Pload and Prx are calculated on an identical receiving dipole antenna and polarization at distance r
 * both Tx and Rx dipoles have a gain of 2.15db or 1.642
 
 Ez formula below contain the classic Ia current, space impedance and decreasing with distance r<br>
