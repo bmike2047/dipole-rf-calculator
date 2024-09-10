@@ -27,26 +27,26 @@ First the following assumptions are made:
 
 Ez formula below contain the classic Ia current, space impedance and decreasing with distance r.<br>
 The trigonometric terms are caused by the sinusoidal Ia current distribution on the antenna (doughnut shape).<br>
-<img src="assets/images/half-dipole2.gif" width="370px">
+<img src="src/main/resources/dipole/rf/calculator/images/half-dipole2.gif" width="380">
 <br/>
 
 VOC formula below is the Ez*l but because the receiving antenna also has a sinusoidal current distribution it gets multiplied again by the trigonometric terms above.<br/>
 This leads to the tan function squared because of the 2 identical dipoles.<br/>
-<img src="assets/images/half-dipole3.gif" width="320px">
+<img src="src/main/resources/dipole/rf/calculator/images/half-dipole3.gif" width="300">
 <br/>
 
 Pload formula below is constructed from converting to rms and perfectly matching the load to the antenna.<br/>
-<img src="assets/images/half-dipole4.gif" width="150px">
+<img src="src/main/resources/dipole/rf/calculator/images/half-dipole4.gif" width="140">
 <br/>
 
-**Verification 1**<br/>
-Friis formula below is use to verify all calculations above.<br/>
+### Verification 1 ###
+Friis formula below is used to verify all calculations above.<br/>
 It takes into consideration both dipole's effective aperture area.<br/>
 Given freq=2.4GHz, Ptx=36.54W, r=200m our calculator gives Pload=243nW. Using the Friis formula below we also get Prx=243nW.<br> 
-<img src="assets/images/half-dipole5.gif" width="210px">
+<img src="src/main/resources/dipole/rf/calculator/images/half-dipole5.gif" width="200">
 <br/>
 
-**Verification 2**<br/>
+### Verification 2 ###
 CST studio was used to calculate the electric field for freq=2.4GHz, Ptx=36.54W, r=200m.<br/>
 This resulted in 0.2989V/m (screenshot below) while our application returned 0.3V/m (see screenshot at the end of this file) which is pretty good for our sinusoidal current distribution approximation.<br/>
 ![](assets/images/cst.png)
@@ -67,10 +67,12 @@ For native OS executable run the command below and check folder: ./build/image/b
 sudo apt-get install binutils //only for linux
 ./gradlew clean jlink 
 ```
+> [!TIP]
+> Math formulas in latex format can be found in file /formulas.tex
 
 > [!TIP]
 > I case you have older JDK version than JDK 17 and you are using IntelliJIDEA as IDE make sure Gradle JVM is set to JDK 17 in:<br/>
 > File | Settings | Build, Execution, Deployment | Build Tools | Gradle  -> Gradle JVM
 
 ### Screenshot
-![](assets/images/screenshot1.png)
+![](assets/images/screenshot.png)

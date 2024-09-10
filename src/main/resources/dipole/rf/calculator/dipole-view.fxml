@@ -6,25 +6,24 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
 
-<VBox alignment="TOP_CENTER" nodeOrientation="LEFT_TO_RIGHT" prefHeight="725.0" prefWidth="900.0" spacing="5.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dipole.rf.calculator.CalculatorController">
+<VBox alignment="TOP_CENTER" nodeOrientation="LEFT_TO_RIGHT" prefHeight="640.0" prefWidth="900.0" spacing="5.0" style="-fx-background-color: #FFF;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dipole.rf.calculator.CalculatorController">
     <padding>
         <Insets left="20.0" right="20.0" top="20.0" />
     </padding>
     <children>
-        <HBox alignment="CENTER_LEFT" prefHeight="500.0" prefWidth="860.0">
+        <HBox alignment="CENTER_LEFT" maxHeight="430" prefHeight="430" >
             <children>
-                <VBox prefHeight="494.0" prefWidth="435.0">
+                <VBox maxHeight="420" prefHeight="420" prefWidth="400.0" >
                     <children>
                         <ImageView fitHeight="340.0" fitWidth="404.0" pickOnBounds="true" preserveRatio="true">
                             <image>
                                 <Image url="@images/half-dipole1.png" />
                             </image>
                         </ImageView>
-                        <HBox prefHeight="159.0" prefWidth="404.0">
+                        <HBox>
                             <children>
-                                <GridPane prefHeight="158.0" prefWidth="473.0">
+                                <GridPane prefHeight="158.0" prefWidth="493.0">
                                     <columnConstraints>
                                         <ColumnConstraints hgrow="SOMETIMES" maxWidth="404.0" minWidth="10.0" prefWidth="294.0" />
                                     </columnConstraints>
@@ -40,8 +39,8 @@
                                         <Label prefHeight="24.0" prefWidth="404.0" style="-fx-font-size: 12.5;" text="Ez = Eθ where θ = 90°" GridPane.rowIndex="1" />
                                         <Label layoutX="10.0" layoutY="16.0" prefHeight="24.0" prefWidth="404.0" style="-fx-font-size: 12.5;" text="Voc = V open circuit on an identical dipole at r" GridPane.rowIndex="2" />
                                         <Label layoutX="10.0" layoutY="41.0" prefHeight="24.0" prefWidth="404.0" style="-fx-font-size: 12.5;" text="Pload = P delivered to a receiving matched load" GridPane.rowIndex="3" />
-                                        <Label layoutX="10.0" layoutY="81.0" prefHeight="24.0" prefWidth="404.0" style="-fx-font-size: 12.5;" text="Prx = Friis formula-received power on a matched load" GridPane.rowIndex="4" />
-                                        <Label layoutX="10.0" layoutY="92.0" prefHeight="25.0" prefWidth="404.0" style="-fx-font-size: 12.5;" text="Rrad = 73.08Ω Gtx = Grx = 1.642" GridPane.rowIndex="5" />
+                                        <Label layoutX="10.0" layoutY="81.0" prefHeight="24.0" prefWidth="404.0" style="-fx-font-size: 12.5;" text="Prx = Friis - received power on a matched load" GridPane.rowIndex="4" />
+                                        <Label layoutX="10.0" layoutY="92.0" prefHeight="24.0" prefWidth="404.0" style="-fx-font-size: 12.5;" text="Rrad = 73.08Ω Gtx = Grx = 1.642" GridPane.rowIndex="5" />
                                     </children>
                                     <padding>
                                         <Insets left="20.0" />
@@ -51,63 +50,63 @@
                         </HBox>
                     </children>
                 </VBox>
-                <GridPane prefHeight="440.0" prefWidth="453.0">
+                <GridPane >
                     <columnConstraints>
                         <ColumnConstraints hgrow="SOMETIMES" maxWidth="353.0" minWidth="10.0" prefWidth="348.0" />
-                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="133.0" minWidth="7.0" prefWidth="24.0" />
-                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="182.0" minWidth="0.0" prefWidth="72.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="133.0" minWidth="7.0" prefWidth="44.0" />
+                        <ColumnConstraints  maxWidth="77" minWidth="0.0" prefWidth="77.0" />
                     </columnConstraints>
                     <rowConstraints>
-                        <RowConstraints maxHeight="265.0" minHeight="10.0" prefHeight="131.0" vgrow="SOMETIMES" />
-                        <RowConstraints maxHeight="273.0" minHeight="0.0" prefHeight="114.0" valignment="CENTER" vgrow="SOMETIMES" />
-                        <RowConstraints maxHeight="304.0" minHeight="9.0" prefHeight="102.0" vgrow="SOMETIMES" />
-                        <RowConstraints maxHeight="247.0" minHeight="10.0" prefHeight="111.0" vgrow="SOMETIMES" />
-                        <RowConstraints maxHeight="247.0" minHeight="10.0" prefHeight="48.0" vgrow="SOMETIMES" />
-                        <RowConstraints maxHeight="247.0" minHeight="10.0" prefHeight="58.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="100.0" minHeight="50.0" prefHeight="100.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="80.0" minHeight="50.0" prefHeight="80.0" valignment="CENTER" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="97.0" minHeight="50.0" prefHeight="97.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="85.0" minHeight="50.0" prefHeight="85.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="38.0" minHeight="10.0" prefHeight="33.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="38.0" minHeight="10.0" prefHeight="31.0" vgrow="SOMETIMES" />
                     </rowConstraints>
                     <children>
-                        <ImageView fitHeight="113.0" fitWidth="370.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER">
+                        <ImageView fitWidth="380.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER">
                             <image>
-                                <Image url="@images/half-dipole2.png" />
+                                <Image url="@images/half-dipole2.gif" />
                             </image>
                         </ImageView>
-                        <Label style="-fx-font-size: 15;" text="=" GridPane.columnIndex="1" GridPane.halignment="CENTER" />
-                        <Label fx:id="Ez" style="-fx-font-size: 15;" text="0V" GridPane.columnIndex="2" GridPane.halignment="CENTER" />
-                        <ImageView fitHeight="85.0" fitWidth="300.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                        <Label style="-fx-font-size: 16;" text="=" GridPane.columnIndex="1" GridPane.halignment="CENTER" />
+                        <Label fx:id="Ez" style="-fx-font-size: 16;" text="0V" GridPane.columnIndex="2" GridPane.halignment="CENTER" />
+                        <ImageView fitWidth="300.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
                             <image>
-                                <Image url="@images/half-dipole3.png" />
+                                <Image url="@images/half-dipole3.gif" />
                             </image>
                         </ImageView>
-                        <Label style="-fx-font-size: 15;" text="=" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
-                        <Label fx:id="VOC" style="-fx-font-size: 15;" text="0V" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
-                        <ImageView fitHeight="90.0" fitWidth="167.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.rowIndex="2">
+                        <Label style="-fx-font-size: 16;" text="=" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+                        <Label fx:id="VOC" style="-fx-font-size: 16;" text="0V" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+                        <ImageView fitWidth="140.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.rowIndex="2">
                             <image>
-                                <Image url="@images/half-dipole4.png" />
+                                <Image url="@images/half-dipole4.gif" />
                             </image>
                         </ImageView>
-                        <ImageView fitHeight="98.0" fitWidth="201.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.rowIndex="3">
+                        <ImageView fitHeight="98.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.rowIndex="3">
                             <image>
-                                <Image url="@images/half-dipole5.png" />
+                                <Image url="@images/half-dipole5.gif" />
                             </image>
                         </ImageView>
-                        <Label layoutX="361.0" layoutY="64.0" style="-fx-font-size: 15;" text="=" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
-                        <Label layoutX="362.0" layoutY="177.0" style="-fx-font-size: 15;" text="=" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" />
-                        <Label layoutX="358.0" layoutY="377.0" style="-fx-font-size: 15;" text="=" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="5" />
-                        <Label fx:id="Pload" layoutX="379.0" layoutY="177.0" style="-fx-font-size: 15;" text="0W" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
-                        <Label fx:id="Prx" layoutX="379.0" layoutY="177.0" style="-fx-font-size: 15;" text="0W" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="3" />
-                        <Label fx:id="attenuation" layoutX="379.0" layoutY="274.0" style="-fx-font-size: 15;" text="0db" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="5" />
-                        <Label style="-fx-font-size: 15;" text="Free-space path loss" GridPane.halignment="CENTER" GridPane.rowIndex="5" />
-                        <Label layoutX="84.0" layoutY="460.0" prefHeight="30.0" prefWidth="63.0" style="-fx-font-size: 15;" text="Prxdbm" GridPane.halignment="CENTER" GridPane.rowIndex="4" />
-                        <Label layoutX="362.0" layoutY="312.0" style="-fx-font-size: 15;" text="=" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="4" />
-                        <Label fx:id="Prxdbm" layoutX="378.0" layoutY="312.0" style="-fx-font-size: 15;" text="0dbm" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="4" />
+                        <Label layoutX="361.0" layoutY="64.0" style="-fx-font-size: 16;" text="=" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
+                        <Label layoutX="362.0" layoutY="177.0" style="-fx-font-size: 16;" text="=" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" />
+                        <Label layoutX="358.0" layoutY="377.0" style="-fx-font-size: 16;" text="=" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="5" />
+                        <Label fx:id="Pload" layoutX="379.0" layoutY="177.0" style="-fx-font-size: 16;" text="0W" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
+                        <Label fx:id="Prx" layoutX="379.0" layoutY="177.0" style="-fx-font-size: 16;" text="0W" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="3" />
+                        <Label fx:id="attenuation" layoutX="379.0" layoutY="274.0" style="-fx-font-size: 16;" text="0db" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="5" />
+                        <Label style="-fx-font-size: 16;" text="Free-space path loss" GridPane.halignment="CENTER" GridPane.rowIndex="5" />
+                        <Label layoutX="84.0" layoutY="460.0" prefHeight="30.0" prefWidth="63.0" style="-fx-font-size: 16;" text="Prxdbm" GridPane.halignment="CENTER" GridPane.rowIndex="4" />
+                        <Label layoutX="362.0" layoutY="312.0" style="-fx-font-size: 16;" text="=" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="4" />
+                        <Label fx:id="Prxdbm" layoutX="378.0" layoutY="312.0" style="-fx-font-size: 16;" text="0dbm" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="4" />
                     </children>
                 </GridPane>
             </children>
         </HBox>
         <Separator prefWidth="200.0" />
-        <HBox prefHeight="152.0" prefWidth="860.0">
+        <HBox maxHeight="145" prefHeight="145" prefWidth="860.0">
             <children>
-                <GridPane prefHeight="184.0" prefWidth="857.0">
+                <GridPane prefHeight="192" prefWidth="857.0">
                     <columnConstraints>
                         <ColumnConstraints hgrow="SOMETIMES" maxWidth="136.0" minWidth="10.0" prefWidth="99.0" />
                         <ColumnConstraints hgrow="SOMETIMES" maxWidth="125.0" minWidth="10.0" prefWidth="114.0" />
@@ -118,42 +117,42 @@
                         <ColumnConstraints hgrow="SOMETIMES" maxWidth="266.0" minWidth="10.0" prefWidth="26.0" />
                     </columnConstraints>
                     <rowConstraints>
-                        <RowConstraints maxHeight="42.0" minHeight="10.0" prefHeight="42.0" vgrow="NEVER" />
-                        <RowConstraints maxHeight="42.0" minHeight="10.0" prefHeight="42.0" vgrow="NEVER" />
-                        <RowConstraints maxHeight="56.0" minHeight="3.0" prefHeight="46.0" vgrow="NEVER" />
-                        <RowConstraints maxHeight="114.0" minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="35" minHeight="10.0" prefHeight="50" vgrow="NEVER" />
+                        <RowConstraints maxHeight="35" minHeight="10.0" prefHeight="50" vgrow="NEVER" />
+                        <RowConstraints maxHeight="35" minHeight="10.0" prefHeight="50" vgrow="NEVER" />
+                        <RowConstraints maxHeight="35" minHeight="10.0" prefHeight="50" vgrow="SOMETIMES" />
                     </rowConstraints>
                     <children>
-                        <Label style="-fx-font-size: 15;" text="Freq = " GridPane.halignment="RIGHT" />
-                        <TextField fx:id="freq" minWidth="28.0" prefHeight="32.0" prefWidth="100.0" style="-fx-font-size: 15;" text="2.4" GridPane.columnIndex="1" GridPane.halignment="CENTER" />
-                        <TextField fx:id="Ptx" layoutX="87.0" layoutY="13.0" minWidth="28.0" prefHeight="32.0" prefWidth="100.0" style="-fx-font-size: 15;" text="0.1" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                        <TextField fx:id="r" layoutX="87.0" layoutY="50.0" minWidth="28.0" prefHeight="32.0" prefWidth="100.0" style="-fx-font-size: 15;" text="10" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                        <Label layoutX="30.0" layoutY="19.0" style="-fx-font-size: 15;" text="Ptx = " GridPane.halignment="RIGHT" GridPane.rowIndex="1" />
-                        <Label layoutX="10.0" layoutY="56.0" style="-fx-font-size: 15;" text="r = " GridPane.halignment="RIGHT" GridPane.rowIndex="2" />
-                        <Label layoutX="60.0" layoutY="92.0" style="-fx-font-size: 15;" text="Ghz" GridPane.columnIndex="2" GridPane.halignment="CENTER" />
-                        <Label layoutX="208.0" layoutY="19.0" style="-fx-font-size: 15;" text="W" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
-                        <Label layoutX="208.0" layoutY="56.0" style="-fx-font-size: 15;" text="m" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
-                        <Label layoutX="216.0" layoutY="19.0" style="-fx-font-size: 15;" text="Ia = " GridPane.columnIndex="4" GridPane.halignment="RIGHT" />
-                        <Label fx:id="Ia" style="-fx-font-size: 15;" text="0A" GridPane.columnIndex="5" GridPane.halignment="LEFT" />
-                        <Label layoutX="36.0" layoutY="57.0" style="-fx-font-size: 15;" text="Ptxdbm = " GridPane.columnIndex="4" GridPane.halignment="RIGHT" GridPane.rowIndex="1" />
-                        <Label fx:id="Ptxdbm" layoutX="457.0" layoutY="19.0" style="-fx-font-size: 15;" text="0dbm" GridPane.columnIndex="5" GridPane.rowIndex="1" />
-                        <Label layoutX="408.0" layoutY="57.0" style="-fx-font-size: 15;" text="l = " GridPane.columnIndex="4" GridPane.halignment="RIGHT" GridPane.rowIndex="2" />
-                        <Label fx:id="l" layoutX="457.0" layoutY="57.0" style="-fx-font-size: 15;" text="0m" GridPane.columnIndex="5" GridPane.rowIndex="2" />
-                        <Button fx:id="calculate" mnemonicParsing="false" onAction="#onCalculateButtonClick" prefHeight="27.0" prefWidth="121.0" style="-fx-font-size: 15;" text="Calculate" GridPane.columnIndex="5" GridPane.halignment="RIGHT" GridPane.rowIndex="3" />
+                        <Label style="-fx-font-size: 16;" text="Freq = " GridPane.halignment="RIGHT" />
+                        <TextField fx:id="freq" maxHeight="30" minHeight="30" minWidth="30.0" prefHeight="32" prefWidth="100.0" style="-fx-font-size: 16;" text="2.4" GridPane.columnIndex="1" GridPane.halignment="CENTER" />
+                        <TextField fx:id="Ptx" layoutX="87.0" layoutY="13.0" maxHeight="30" minHeight="30" minWidth="30.0" prefHeight="30" prefWidth="100.0" style="-fx-font-size: 16;" text="0.1" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <TextField fx:id="r" layoutX="87.0" layoutY="50.0" maxHeight="30" minHeight="30" minWidth="30" prefHeight="30" prefWidth="100.0" style="-fx-font-size: 16;" text="10" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <Label layoutX="30.0" layoutY="19.0" style="-fx-font-size: 16;" text="Ptx = " GridPane.halignment="RIGHT" GridPane.rowIndex="1" />
+                        <Label layoutX="10.0" layoutY="56.0" style="-fx-font-size: 16;" text="r = " GridPane.halignment="RIGHT" GridPane.rowIndex="2" />
+                        <Label layoutX="60.0" layoutY="92.0" style="-fx-font-size: 16;" text="Ghz" GridPane.columnIndex="2" GridPane.halignment="CENTER" />
+                        <Label layoutX="208.0" layoutY="19.0" style="-fx-font-size: 16;" text="W" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+                        <Label layoutX="208.0" layoutY="56.0" style="-fx-font-size: 16;" text="m" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
+                        <Label layoutX="216.0" layoutY="19.0" style="-fx-font-size: 16;" text="Ia = " GridPane.columnIndex="4" GridPane.halignment="RIGHT" />
+                        <Label fx:id="Ia" style="-fx-font-size: 16;" text="0A" GridPane.columnIndex="5" GridPane.halignment="LEFT" />
+                        <Label layoutX="36.0" layoutY="57.0" style="-fx-font-size: 16;" text="Ptxdbm = " GridPane.columnIndex="4" GridPane.halignment="RIGHT" GridPane.rowIndex="1" />
+                        <Label fx:id="Ptxdbm" layoutX="457.0" layoutY="19.0" style="-fx-font-size: 16;" text="0dbm" GridPane.columnIndex="5" GridPane.rowIndex="1" />
+                        <Label layoutX="408.0" layoutY="57.0" style="-fx-font-size: 16;" text="l = " GridPane.columnIndex="4" GridPane.halignment="RIGHT" GridPane.rowIndex="2" />
+                        <Label fx:id="l" layoutX="457.0" layoutY="57.0" style="-fx-font-size: 16;" text="0m" GridPane.columnIndex="5" GridPane.rowIndex="2" />
+                        <Button fx:id="calculate" mnemonicParsing="false" onAction="#onCalculateButtonClick" prefHeight="27.0" prefWidth="121.0" style="-fx-font-size: 16;" text="Calculate" GridPane.columnIndex="5" GridPane.halignment="RIGHT" GridPane.rowIndex="3" />
                     </children>
                 </GridPane>
             </children>
         </HBox>
-        <HBox prefHeight="19.0" prefWidth="216.0">
+        <HBox maxHeight="40" prefHeight="40" prefWidth="216.0">
             <children>
-                <VBox prefHeight="19.0" prefWidth="69.0">
+                <VBox maxHeight="19" prefHeight="19.0" prefWidth="69.0">
                     <children>
-                        <Label prefHeight="19.0" prefWidth="88.0" style="-fx-font-size: 15;" text="Status:" />
+                        <Label maxHeight="19" prefHeight="19.0" prefWidth="88.0" style="-fx-font-size: 16;" text="Status:" />
                     </children>
                 </VBox>
-                <VBox prefHeight="19.0" prefWidth="762.0">
+                <VBox maxHeight="19" prefHeight="19.0" prefWidth="762.0">
                     <children>
-                        <Label fx:id="status" style="-fx-font-size: 15;" />
+                        <Label fx:id="status" style="-fx-font-size: 16;" />
                     </children>
                 </VBox>
             </children>
