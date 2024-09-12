@@ -2,9 +2,6 @@ Dipole RF Calculator
 --
 ![](assets/images/logo2.png)
 
-### Code repository
-<a href="https://github.com/bmike2047/dipole-rf-calculator">https://github.com/bmike2047/dipole-rf-calculator</a>
-
 ### Description
 Calculates Ez field from a half-wave dipole antenna at distance r.<br/>
 Calculates VOC (V open circuit) from the incident field Ez on an identical receiving dipole antenna at distance r. <br/>
@@ -68,7 +65,7 @@ sudo apt-get install binutils //only for linux
 ./gradlew clean jlink 
 ```
 > [!TIP]
-> Math formulas in latex format can be found in file /formulas.tex
+> Math formulas in LaTeX format can be found in file /formulas.tex
 
 > [!TIP]
 > I case you have older JDK version than JDK 17 and you are using IntelliJIDEA as IDE make sure Gradle JVM is set to JDK 17 in:<br/>
