@@ -7,6 +7,9 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
+/**
+ * Main entry point class.
+ */
 public class CalculatorApplication extends Application {
 
 
@@ -24,7 +27,7 @@ public class CalculatorApplication extends Application {
     /**
      * Main entry point.
      *
-     * @param args
+     * @param args input arguments
      */
     public static void main(String[] args) {
         launch();

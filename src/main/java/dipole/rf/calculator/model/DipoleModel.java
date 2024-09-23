@@ -3,19 +3,54 @@ package dipole.rf.calculator.model;
 import dipole.rf.calculator.utils.RFUtils;
 import dipole.rf.calculator.utils.Result;
 
-
+/**
+ * RF model of a half-wave dipole antenna.
+ */
 public class DipoleModel {
-
+    /**
+     * Antenna transmitted power (dbm)
+     */
     private final String Ptxdbm;
+    /**
+     * Half-wave dipole length (m)
+     */
     private final String l;
+    /**
+     * Antenna feed current (A)
+     */
     private final String Ia;
+    /**
+     * Electric field on Z axis at a point r (V/m)
+     */
     private final String Ez;
+    /**
+     * Voltage open circuit on a receiving antenna
+     */
     private final String VOC;
+    /**
+     * Power on a receiving load (W)
+     */
     private final String Pload;
+    /**
+     * Received power (W)
+     */
     private final String Prx;
+    /**
+     * Received power (dbm)
+     */
     private final String Prxdbm;
+    /**
+     * Free space path attenuation (db)
+     */
     private final String attenuation;
 
+    /**
+     * Initialize the model.
+     *
+     * @param freq_simple source frequency (Ghz)
+     * @param Ptx         antenna transmitted power
+     * @param r           distance point from the transmit antenna
+     */
     public DipoleModel(double freq_simple, double Ptx, double r) {
 
         double freq = freq_simple * 1E9;

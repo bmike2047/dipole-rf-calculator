@@ -1,18 +1,40 @@
 package dipole.rf.calculator.utils;
 
+/**
+ * Maths operations result container.
+ *
+ * @param value
+ */
 public record Result(double value) {
     private final static int PREFIX_OFFSET = 5;
     private final static String[] PREFIX_ARRAY = {"f", "p", "n", "µ", "m", "", "k", "M", "G", "T"};
 
+    /**
+     * Convert to engineering format.
+     *
+     * @param unitOfMeasure unit of measure
+     * @return converted result string
+     */
     public String toEngineering(final String unitOfMeasure) {
         return convert(value) + unitOfMeasure;
     }
 
+    /**
+     * Convert to decimal format.
+     *
+     * @param unitOfMeasure unit of measure
+     * @return converted result string
+     */
     public String toDecimal(final String unitOfMeasure) {
         return String.format("%.0f", value) + unitOfMeasure;
     }
 
-
+    /**
+     * Engineering format convert algorithm.
+     *
+     * @param val input real numeric value
+     * @return converted value to engineering format string
+     */
     private String convert(double val) {
         // If the value is zero, then simply return 0 with the correct number of dp
         if (val == 0) return String.format("%.0f", 0.0);

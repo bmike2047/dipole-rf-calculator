@@ -9,41 +9,82 @@ import javafx.scene.paint.Color;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+/**
+ * Main MVC controller.
+ */
 public class CalculatorController {
     public static final Logger LOG = Logger.getLogger("dipole.rf.calculator");
+    /**
+     * Electric field on Z axis at a point r (V/m)
+     */
     @FXML
     private Label Ez;
+    /**
+     * Voltage open circuit on a receiving antenna (V)
+     */
     @FXML
     private Label VOC;
+    /**
+     * Power on a receiving load (W)
+     */
     @FXML
     private Label Pload;
+    /**
+     * Received power (W)
+     */
     @FXML
     private Label Prx;
+    /**
+     * Received power (dbm)
+     */
     @FXML
     private Label Prxdbm;
+    /**
+     * Free space path attenuation (db)
+     */
     @FXML
     private Label attenuation;
+    /**
+     * Antenna feed current (A)
+     */
     @FXML
     private Label Ia;
+    /**
+     * Antenna transmitted power (dbm)
+     */
     @FXML
     private Label Ptxdbm;
+    /**
+     * Half-wave dipole length (m)
+     */
     @FXML
     private Label l;
+    /**
+     * Calculations status
+     */
     @FXML
     private Label status;
+    /**
+     * Source frequency (Hz)
+     */
     @FXML
     private TextField freq;
+    /**
+     * Antenna transmitted power (W)
+     */
     @FXML
     private TextField Ptx;
+    /**
+     * Distance point from the transmit antenna (m)
+     */
     @FXML
     private TextField r;
 
     /**
-     * Setup components before use.
+     * Initialize components before use.
      */
     @FXML
     private void initialize() {
-
     }
 
     /**
