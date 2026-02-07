@@ -54,7 +54,7 @@ public record Result(double value) {
 
         if (index >= 0 && index < PREFIX_ARRAY.length) {
             // If a prefix exists use it to create the correct string
-            return String.format("%.0f%s", val_scaled, PREFIX_ARRAY[index]);
+            return String.format("%.2f%s", val_scaled, PREFIX_ARRAY[index]);
         } else {
             // If no prefix exists just make a string of the form 000e000
             return String.format("%.0fe%d", val_scaled, count * 3);

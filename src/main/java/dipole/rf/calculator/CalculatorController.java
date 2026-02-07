@@ -30,11 +30,6 @@ public class CalculatorController {
     @FXML
     private Label Pload;
     /**
-     * Received power (W)
-     */
-    @FXML
-    private Label Prx;
-    /**
      * Received power (dbm)
      */
     @FXML
@@ -105,7 +100,6 @@ public class CalculatorController {
             this.Ez.setText(dipoleModel.getEz());
             this.VOC.setText(dipoleModel.getVOC());
             this.Pload.setText(dipoleModel.getPload());
-            this.Prx.setText(dipoleModel.getPrx());
             this.Prxdbm.setText(dipoleModel.getPrxdbm());
             this.attenuation.setText(dipoleModel.getAttenuation());
 

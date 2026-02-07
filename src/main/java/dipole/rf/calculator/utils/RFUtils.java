@@ -117,17 +117,6 @@ public class RFUtils {
         return new Result(Math.pow(VOC, 2) / (8 * R_RAD));
     }
 
-    /**
-     * Calculate received power by a receiving antenna (W) via Friis formula
-     *
-     * @param Ptx    transmit power
-     * @param lambda wavelength
-     * @param r      distance point from the transmit antenna
-     * @return Result
-     */
-    public static Result computePrx(double Ptx, double lambda, double r) {
-        return new Result(Ptx * GTX * GRX * Math.pow((lambda / (4 * Math.PI * r)), 2));
-    }
 
     /**
      * Convert W to decibel milliwatt (dbm)

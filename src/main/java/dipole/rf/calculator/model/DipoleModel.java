@@ -31,10 +31,7 @@ public class DipoleModel {
      * Power on a receiving load (W)
      */
     private final String Pload;
-    /**
-     * Received power (W)
-     */
-    private final String Prx;
+
     /**
      * Received power (dbm)
      */
@@ -62,8 +59,7 @@ public class DipoleModel {
         Result Ez = RFUtils.computeEz(Ia.value(), k.value(), l.value(), r);
         Result VOC = RFUtils.computeVOC(Ia.value(), k.value(), l.value(), r);
         Result Pload = RFUtils.computePload(VOC.value());
-        Result Prx = RFUtils.computePrx(Ptx, lambda.value(), r);
-        Result Prxdbm = RFUtils.wToDbm(Prx.value());
+        Result Prxdbm = RFUtils.wToDbm(Pload.value());
         Result attenuation = new Result(Math.abs(Prxdbm.value() - Ptxdbm.value()));
 
         this.Ptxdbm = Ptxdbm.toDecimal("dbm");
@@ -72,7 +68,6 @@ public class DipoleModel {
         this.Ez = Ez.toEngineering("V/m");
         this.VOC = VOC.toEngineering("V");
         this.Pload = Pload.toEngineering("W");
-        this.Prx = Prx.toEngineering("W");
         this.Prxdbm = Prxdbm.toDecimal("dbm");
         this.attenuation = attenuation.toDecimal("db");
 
@@ -100,10 +95,6 @@ public class DipoleModel {
 
     public String getPload() {
         return Pload;
-    }
-
-    public String getPrx() {
-        return Prx;
     }
 
     public String getPrxdbm() {

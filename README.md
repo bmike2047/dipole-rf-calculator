@@ -6,7 +6,6 @@ Dipole RF Calculator
 Calculates Ez field from a half-wave dipole antenna at distance r.<br/>
 Calculates VOC (V open circuit) from the incident field Ez on an identical receiving dipole antenna at distance r. <br/>
 Calculates Pload (power delivered to a perfectly matched load) by the incident field Ez on an identical receiving dipole antenna at distance r. <br/>
-Calculates Prx (power received to a perfectly matched load) via Friis formula.
 
 ### Other features
 Calculates dipole length from input frequency for a quick antenna design.<br/>
@@ -19,7 +18,7 @@ Computed results are displayed in engineering format.<br/>
 First the following assumptions are made:
 * dipole antenna has a half-wave length meaning radiation resistance Rrad = 73.08 &#937;.
 * Ez represents the electric field in Cartesian coordinates  and is identical with E&#952; with &#952;=90&#176; in spherical coordinates.
-* VOC, Pload and Prx are calculated on an identical receiving dipole antenna and polarization at distance r.
+* VOC and Pload are calculated on an identical receiving dipole antenna and polarization at distance r.
 * both Tx and Rx dipoles have a gain of 2.15db or 1.642.
 
 Ez formula below contain the classic Ia current, space impedance and decreasing with distance r.<br>
@@ -36,16 +35,9 @@ Pload formula below is constructed from converting to rms and perfectly matching
 <img src="src/main/resources/dipole/rf/calculator/images/half-dipole4.gif" width="140">
 <br/>
 
-### Verification 1 ###
-Friis formula below is used to verify all calculations above.<br/>
-It takes into consideration both dipole's effective aperture area.<br/>
-Given freq=2.4GHz, Ptx=36.54W, r=200m our calculator gives Pload=243nW. Using the Friis formula below we also get Prx=243nW.<br> 
-<img src="src/main/resources/dipole/rf/calculator/images/half-dipole5.gif" width="200">
-<br/>
-
-### Verification 2 ###
+### Verification ###
 CST studio was used to calculate the electric field for freq=2.4GHz, Ptx=36.54W, r=200m.<br/>
-This resulted in 0.2989V/m (screenshot below) while our application returned 0.3V/m (see screenshot at the end of this file) which is pretty good for our sinusoidal current distribution approximation.<br/>
+This resulted in 0.2989V/m (screenshot below) while our application returned 0.2997V/m (see screenshot at the end of this file)<br/>
 ![](assets/images/cst.png)
 <br/>
 

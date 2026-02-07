@@ -37,13 +37,12 @@ public class CalculatorControllerTest {
         Button button = robot.lookup("#calculate").queryAs(Button.class);
         robot.clickOn(button);
 
-        Assertions.assertThat(robot.lookup("#Ia").queryAs(Label.class)).hasText("52mA");
+        Assertions.assertThat(robot.lookup("#Ia").queryAs(Label.class)).hasText("52.31mA");
         Assertions.assertThat(robot.lookup("#Ptxdbm").queryAs(Label.class)).hasText("20dbm");
-        Assertions.assertThat(robot.lookup("#l").queryAs(Label.class)).hasText("62mm");
-        Assertions.assertThat(robot.lookup("#Ez").queryAs(Label.class)).hasText("314mV/m");
-        Assertions.assertThat(robot.lookup("#VOC").queryAs(Label.class)).hasText("12mV");
-        Assertions.assertThat(robot.lookup("#Pload").queryAs(Label.class)).hasText("266nW");
-        Assertions.assertThat(robot.lookup("#Prx").queryAs(Label.class)).hasText("266nW");
+        Assertions.assertThat(robot.lookup("#l").queryAs(Label.class)).hasText("62.46mm");
+        Assertions.assertThat(robot.lookup("#Ez").queryAs(Label.class)).hasText("313.67mV/m");
+        Assertions.assertThat(robot.lookup("#VOC").queryAs(Label.class)).hasText("12.47mV");
+        Assertions.assertThat(robot.lookup("#Pload").queryAs(Label.class)).hasText("266.05nW");
         Assertions.assertThat(robot.lookup("#Prxdbm").queryAs(Label.class)).hasText("-36dbm");
         Assertions.assertThat(robot.lookup("#attenuation").queryAs(Label.class)).hasText("56db");
         Assertions.assertThat(robot.lookup("#status").queryAs(Label.class)).hasText("Done");
