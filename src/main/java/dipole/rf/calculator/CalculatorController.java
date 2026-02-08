@@ -45,15 +45,35 @@ public class CalculatorController {
     @FXML
     private Label Ia;
     /**
+     * Antenna feed voltage (V)
+     */
+    @FXML
+    private Label Va;
+    /**
      * Antenna transmitted power (dbm)
      */
     @FXML
     private Label Ptxdbm;
     /**
-     * Half-wave dipole length (m)
+     * Half-wave dipole length adjusted to remove reactance(m)
      */
     @FXML
-    private Label l;
+    private Label lAdjusted;
+    /**
+     * Far-field region start (m)
+     */
+    @FXML
+    private Label farField;
+    /**
+     * Wavelength (m)
+     */
+    @FXML
+    private Label lambda;
+    /**
+     * Half-wave dipole single element length (m)
+     */
+    @FXML
+    private Label element;
     /**
      * Calculations status
      */
@@ -74,6 +94,11 @@ public class CalculatorController {
      */
     @FXML
     private TextField r;
+    /**
+     * Attenuation from the walls (m)
+     */
+    @FXML
+    private TextField wallsAttenuation;
 
     /**
      * Initialize components before use.
@@ -91,17 +116,22 @@ public class CalculatorController {
             double freq = Double.parseDouble(this.freq.getText().trim());
             double Ptx = Double.parseDouble(this.Ptx.getText().trim());
             double r = Double.parseDouble(this.r.getText().trim());
+            double wallsAttenuation = Double.parseDouble(this.wallsAttenuation.getText().trim());
 
-            DipoleModel dipoleModel = new DipoleModel(freq, Ptx, r);
+            DipoleModel dipoleModel = new DipoleModel(freq, Ptx, r, wallsAttenuation);
 
             this.Ptxdbm.setText(dipoleModel.getPtxdbm());
-            this.l.setText(dipoleModel.getL());
+            this.lAdjusted.setText(dipoleModel.getlAdjusted());
+            this.element.setText(dipoleModel.getElement());
             this.Ia.setText(dipoleModel.getIa());
+            this.Va.setText(dipoleModel.getVa());
             this.Ez.setText(dipoleModel.getEz());
             this.VOC.setText(dipoleModel.getVOC());
             this.Pload.setText(dipoleModel.getPload());
             this.Prxdbm.setText(dipoleModel.getPrxdbm());
             this.attenuation.setText(dipoleModel.getAttenuation());
+            this.farField.setText(dipoleModel .getFarField());
+            this.lambda.setText(dipoleModel.getLambda());
 
             success();
         } catch (Exception e) {

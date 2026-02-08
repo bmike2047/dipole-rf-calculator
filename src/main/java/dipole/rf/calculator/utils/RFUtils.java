@@ -31,7 +31,6 @@ public class RFUtils {
      * Half-wave dipole gain
      */
     public static final double GTX = 1.642;
-    public static final double GRX = GTX;
 
     /**
      * Calculate wavelength (m)
@@ -69,8 +68,18 @@ public class RFUtils {
      * @param power input power
      * @return Result
      */
-    public static Result getCurrent(double power) {
+    public static Result getAntennaFeedCurrent(double power) {
         return new Result(Math.sqrt(2 * power / R_RAD));
+    }
+
+    /**
+     * Calculate antenna feed Voltage (V)
+     *
+     * @param power input power
+     * @return Result
+     */
+    public static Result getAntennaFeedVoltage(double power) {
+        return new Result(Math.sqrt(power * 2 * R_RAD));
     }
 
     /**
@@ -126,6 +135,10 @@ public class RFUtils {
      */
     public static Result wToDbm(double power) {
         return new Result(10 * Math.log10(power / 1E-3));
+    }
+
+    public static double dbToRatio(double db) {
+        return Math.pow(10, db / 10);
     }
 
 }

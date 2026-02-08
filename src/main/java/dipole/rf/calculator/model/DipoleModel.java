@@ -16,9 +16,29 @@ public class DipoleModel {
      */
     private final String l;
     /**
+     * Half-wave dipole length adjusted to remove reactance (m)
+     */
+    private final String lAdjusted;
+    /**
+     * Half-wave dipole single element length (m)
+     */
+    private final String element;
+    /**
+     * Wavelength (m)
+     */
+    private final String lambda;
+    /**
      * Antenna feed current (A)
      */
     private final String Ia;
+    /**
+     * Antenna feed voltage (V)
+     */
+    private final String Va;
+    /**
+     * Far-field region start
+     */
+    private final String farField;
     /**
      * Electric field on Z axis at a point r (V/m)
      */
@@ -44,32 +64,44 @@ public class DipoleModel {
     /**
      * Initialize the model.
      *
-     * @param freq_simple source frequency (Ghz)
-     * @param Ptx         antenna transmitted power
-     * @param r           distance point from the transmit antenna
+     * @param freq_simple      source frequency (Ghz)
+     * @param Ptx              antenna transmitted power
+     * @param r                distance point from the transmit antenna
+     * @param wallsAttenuation attenuation from the walls
      */
-    public DipoleModel(double freq_simple, double Ptx, double r) {
+    public DipoleModel(double freq_simple, double Ptx, double r, double wallsAttenuation) {
 
         double freq = freq_simple * 1E9;
         Result Ptxdbm = RFUtils.wToDbm(Ptx);
         Result l = RFUtils.getDipoleSize(freq);
-        Result Ia = RFUtils.getCurrent(Ptx);
+        Result lAdjusted = new Result(l.value() * 0.95);
+        Result element = new Result(lAdjusted.value() / 2);
+        double ptxAttenuated = Ptx * RFUtils.dbToRatio((-1) * wallsAttenuation);
+        Result Ia = RFUtils.getAntennaFeedCurrent(Ptx);
+        Result IaAttenuated = RFUtils.getAntennaFeedCurrent(ptxAttenuated);
+        Result Va = RFUtils.getAntennaFeedVoltage(Ptx);
         Result lambda = RFUtils.getLambda(freq);
+        Result farField = new Result((Math.pow(lAdjusted.value(), 2) * 2) / lambda.value());
         Result k = RFUtils.getWaveNumber(lambda.value());
-        Result Ez = RFUtils.computeEz(Ia.value(), k.value(), l.value(), r);
-        Result VOC = RFUtils.computeVOC(Ia.value(), k.value(), l.value(), r);
+        Result Ez = RFUtils.computeEz(IaAttenuated.value(), k.value(), l.value(), r);
+        Result VOC = RFUtils.computeVOC(IaAttenuated.value(), k.value(), l.value(), r);
         Result Pload = RFUtils.computePload(VOC.value());
         Result Prxdbm = RFUtils.wToDbm(Pload.value());
         Result attenuation = new Result(Math.abs(Prxdbm.value() - Ptxdbm.value()));
 
         this.Ptxdbm = Ptxdbm.toDecimal("dbm");
         this.l = l.toEngineering("m");
+        this.lAdjusted = lAdjusted.toEngineering("m");
+        this.element = element.toEngineering("m");
         this.Ia = Ia.toEngineering("A");
+        this.Va = Va.toEngineering("V");
         this.Ez = Ez.toEngineering("V/m");
         this.VOC = VOC.toEngineering("V");
         this.Pload = Pload.toEngineering("W");
         this.Prxdbm = Prxdbm.toDecimal("dbm");
         this.attenuation = attenuation.toDecimal("db");
+        this.farField = farField.toEngineering("m");
+        this.lambda = lambda.toEngineering("m");
 
     }
 
@@ -83,6 +115,10 @@ public class DipoleModel {
 
     public String getIa() {
         return Ia;
+    }
+
+    public String getVa() {
+        return Va;
     }
 
     public String getEz() {
@@ -103,5 +139,21 @@ public class DipoleModel {
 
     public String getAttenuation() {
         return attenuation;
+    }
+
+    public String getlAdjusted() {
+        return lAdjusted;
+    }
+
+    public String getElement() {
+        return element;
+    }
+
+    public String getFarField() {
+        return farField;
+    }
+
+    public String getLambda() {
+        return lambda;
     }
 }

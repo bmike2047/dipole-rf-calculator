@@ -26,7 +26,7 @@ public record Result(double value) {
      * @return converted result string
      */
     public String toDecimal(final String unitOfMeasure) {
-        return String.format("%.0f", value) + unitOfMeasure;
+        return String.format("%.1f", value) + unitOfMeasure;
     }
 
     /**
