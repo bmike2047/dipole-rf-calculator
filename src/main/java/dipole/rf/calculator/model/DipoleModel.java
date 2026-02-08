@@ -81,7 +81,7 @@ public class DipoleModel {
         Result IaAttenuated = RFUtils.getAntennaFeedCurrent(ptxAttenuated);
         Result Va = RFUtils.getAntennaFeedVoltage(Ptx);
         Result lambda = RFUtils.getLambda(freq);
-        Result farField = new Result((Math.pow(lAdjusted.value(), 2) * 2) / lambda.value());
+        Result farField = RFUtils.getFarField(lAdjusted.value(), lambda.value());
         Result k = RFUtils.getWaveNumber(lambda.value());
         Result Ez = RFUtils.computeEz(IaAttenuated.value(), k.value(), l.value(), r);
         Result VOC = RFUtils.computeVOC(IaAttenuated.value(), k.value(), l.value(), r);

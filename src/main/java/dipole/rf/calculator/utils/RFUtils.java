@@ -137,8 +137,24 @@ public class RFUtils {
         return new Result(10 * Math.log10(power / 1E-3));
     }
 
+    /**
+     * Convert db to ration
+     *
+     * @param db
+     * @return
+     */
     public static double dbToRatio(double db) {
         return Math.pow(10, db / 10);
     }
 
+    /**
+     * Get start of far field
+     *
+     * @param lAdjusted
+     * @param lambda
+     * @return
+     */
+    public static Result getFarField(double lAdjusted, double lambda) {
+        return new Result((Math.pow(lAdjusted, 2) * 2) / lambda);
+    }
 }
