@@ -21,6 +21,7 @@ public class CalculatorApplication extends Application {
         scene.getStylesheets().add(dipoleCss);
         stage.setTitle("Dipole RF Calculator");
         stage.setScene(scene);
+        stage.setResizable(false);
         stage.show();
     }
 
