@@ -9,15 +9,17 @@ Calculates Pload (power delivered to a perfectly matched load) by the incident f
 
 ### Other features
 Calculates dipole length from input frequency for a quick antenna design.<br/>
-Calculates dipole feed current Ia from input power.<br/>
+Calculates dipole feed current Ia and Va from input power.<br/>
 Converts both Tx and Rx power to dbm for a quick link budget design.<br/>
 Calculates the free space path loss for a quick link budget design. (this includes both Tx and Rx 2.15db gain)<br/>
+Calculates where the far field region starts.<br/>
+We have an extra input for wall attenuation.<br/>
 Computed results are displayed in engineering format.<br/>
 
 ### Quick math
 First the following assumptions are made:
 * dipole antenna has a half-wave length meaning radiation resistance Rrad = 73.08 &#937;.
-* Ez represents the electric field in Cartesian coordinates  and is identical with E&#952; with &#952;=90&#176; in spherical coordinates.
+* Ez represents the electric field in Cartesian coordinates and is identical with E&#952; with &#952;=90&#176; in spherical coordinates.
 * VOC and Pload are calculated on an identical receiving dipole antenna and polarization at distance r.
 * both Tx and Rx dipoles have a gain of 2.15db or 1.642.
 
